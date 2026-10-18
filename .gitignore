@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Daten und Geheimnisse
+backend/data/
+data/
+*.db
+*.db-wal
+*.db-shm
+secret.key
+.env
+config/sites.yaml
+
+# Node / Next.js
+node_modules/
+frontend/.next/
+frontend/out/
+frontend/next-env.d.ts
+frontend/test-results/
+frontend/playwright-report/
+*.tsbuildinfo
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json

@@ -1,0 +1,35 @@
+name: Neuer Hersteller / New manufacturer
+description: Wunsch oder Beitrag für einen neuen Adapter
+labels: [adapter]
+body:
+  - type: input
+    id: device
+    attributes:
+      label: Hersteller und Modell
+      placeholder: z. B. Sungrow SH10RT
+    validations:
+      required: true
+  - type: dropdown
+    id: connection
+    attributes:
+      label: Verbindung
+      options: [Modbus TCP, Modbus RTU, HTTP/REST lokal, MQTT, Cloud-API, Unbekannt]
+    validations:
+      required: true
+  - type: textarea
+    id: docs
+    attributes:
+      label: Dokumentation / Registerliste
+      description: Links zur offiziellen Doku. Bitte keine Zugangsdaten, IP-Adressen oder Seriennummern posten!
+  - type: textarea
+    id: sample
+    attributes:
+      label: Beispielantwort (anonymisiert)
+      render: json
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Mithilfe
+      options:
+        - label: Ich kann mit meiner Anlage testen
+        - label: Ich möchte den Adapter selbst bauen (siehe CONTRIBUTING.md)

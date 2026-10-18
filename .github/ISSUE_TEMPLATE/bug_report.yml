@@ -1,0 +1,34 @@
+name: Fehler / Bug
+description: Etwas funktioniert nicht wie erwartet
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: Was ist passiert?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Schritte zum Nachstellen
+  - type: input
+    id: version
+    attributes:
+      label: Version / Image-Tag
+      placeholder: v1.0.0
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Plattform
+      options: [Docker amd64, Docker arm64 (Raspberry Pi), NAS, Ohne Docker]
+  - type: input
+    id: adapter
+    attributes:
+      label: Betroffener Adapter
+      placeholder: z. B. fronius_local
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs (ohne Zugangsdaten!)
+      render: text

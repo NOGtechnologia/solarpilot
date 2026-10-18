@@ -1,0 +1,22 @@
+# Konfigurationsdatei für Profis. Aktivieren mit SOLARPILOT_SITES_FILE=/app/config/sites.yaml
+# Sites werden beim Start angelegt bzw. aktualisiert (Abgleich über den Namen).
+# Zugangsdaten gehören in "secrets" und werden verschlüsselt gespeichert – besser per ENV:
+#   secrets: { token: ${ENPHASE_TOKEN} }
+sites:
+  - name: Wohnhaus
+    location: { lat: 53.08, lon: 8.80 }
+    timezone: Europe/Berlin
+    tariff: { buy_eur_kwh: 0.32, feed_in_eur_kwh: 0.08 }
+    battery_kwh: 10
+    arrays:
+      - { kwp: 9.8, tilt: 35, azimuth: 180 }   # Süddach
+      - { kwp: 4.2, tilt: 35, azimuth: 90 }    # Ostdach
+    devices:
+      - { type: sma_modbus, name: SMA Tripower, host: 192.168.1.50, unit_id: 3 }
+      - { type: shelly_3em, name: Netzzähler, host: 192.168.1.60, role: grid_meter }
+  - name: Garage Balkonkraftwerk
+    location: { lat: 53.08, lon: 8.80 }
+    arrays:
+      - { kwp: 0.8, tilt: 90, azimuth: 200 }
+    devices:
+      - { type: opendtu, name: OpenDTU, host: 192.168.1.70 }

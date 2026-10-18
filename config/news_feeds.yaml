@@ -1,0 +1,21 @@
+# Standard-News-Quellen (RSS). In den Einstellungen frei änderbar.
+# Angezeigt werden nur Titel, Quelle, Datum, Link und ein kurzer Teaser aus dem Feed.
+feeds:
+  - name: pv magazine Deutschland
+    url: https://www.pv-magazine.de/feed/
+    lang: de
+  - name: Solarserver
+    url: https://www.solarserver.de/feed/
+    lang: de
+  - name: electrive
+    url: https://www.electrive.net/feed/
+    lang: de
+  - name: pv magazine International
+    url: https://www.pv-magazine.com/feed/
+    lang: en
+  - name: PV Tech
+    url: https://www.pv-tech.org/feed/
+    lang: en
+  - name: Clean Energy Wire
+    url: https://www.cleanenergywire.org/rss.xml
+    lang: en

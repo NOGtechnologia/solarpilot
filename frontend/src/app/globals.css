@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+/* Dunkelmodus über die Klasse .dark (next-themes) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Design-Tokens – siehe docs/design.md. Farben haben feste Bedeutung. */
+:root {
+  --solar: #f5a524;
+  --load: #3b82f6;
+  --battery: #22c55e;
+  --grid-import: #f97316;
+  --grid-export: #8b5cf6;
+
+  --bg: #f7f8fa;
+  --card: #ffffff;
+  --card-2: #f1f3f6;
+  --fg: #0b0f14;
+  --muted: #5b6573;
+  --border: #e3e7ed;
+  --ring: #f5a524;
+  --danger: #dc2626;
+  --success: #16a34a;
+  --solar-text: #9a5b00;
+}
+
+.dark {
+  --bg: #0b0f14;
+  --card: #121821;
+  --card-2: #18202b;
+  --fg: #eef2f7;
+  --muted: #95a1b2;
+  --border: #222c39;
+  --danger: #f87171;
+  --success: #4ade80;
+  --solar-text: #f5a524;
+}
+
+@theme inline {
+  --color-solar: var(--solar);
+  --color-load: var(--load);
+  --color-battery: var(--battery);
+  --color-grid-import: var(--grid-import);
+  --color-grid-export: var(--grid-export);
+  --color-bg: var(--bg);
+  --color-card: var(--card);
+  --color-card-2: var(--card-2);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+  --color-solar-text: var(--solar-text);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --radius-card: 18px;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--card-2) 0%, var(--border) 50%, var(--card-2) 100%);
+  background-size: 800px 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+@keyframes wave {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Leaflet */
+.leaflet-container {
+  border-radius: 14px;
+  font: inherit;
+}

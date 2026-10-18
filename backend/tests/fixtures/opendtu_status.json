@@ -1,0 +1,21 @@
+{
+  "inverters": [
+    {
+      "serial": "116180000000",
+      "name": "Balkon",
+      "reachable": true,
+      "producing": true,
+      "AC": { "0": { "Power": { "v": 598.1, "u": "W", "d": 1 } } },
+      "DC": {
+        "0": { "name": { "u": "Süd" }, "Power": { "v": 320.2, "u": "W", "d": 1 }, "Voltage": { "v": 34.1, "u": "V", "d": 1 }, "Current": { "v": 9.39, "u": "A", "d": 2 }, "YieldDay": { "v": 1120, "u": "Wh", "d": 0 } },
+        "1": { "name": { "u": "" }, "Power": { "v": 292.2, "u": "W", "d": 1 }, "Voltage": { "v": 33.8, "u": "V", "d": 1 }, "Current": { "v": 8.64, "u": "A", "d": 2 }, "YieldDay": { "v": 1020, "u": "Wh", "d": 0 } }
+      }
+    }
+  ],
+  "total": {
+    "Power": { "v": 612.4, "u": "W", "d": 1 },
+    "YieldDay": { "v": 2140, "u": "Wh", "d": 0 },
+    "YieldTotal": { "v": 1523.4, "u": "kWh", "d": 3 }
+  },
+  "hints": { "time_sync": false, "radio_problem": false, "default_password": false }
+}

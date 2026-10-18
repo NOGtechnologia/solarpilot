@@ -1,0 +1,11 @@
+{
+  "production": [
+    { "type": "inverters", "activeCount": 24, "readingTime": 1781000000, "wNow": 3180, "whLifetime": 41234000 },
+    { "type": "eim", "activeCount": 1, "measurementType": "production", "readingTime": 1781000000, "wNow": 3210.4, "whLifetime": 41300000, "whToday": 12500, "whLastSevenDays": 151000 }
+  ],
+  "consumption": [
+    { "type": "eim", "activeCount": 1, "measurementType": "total-consumption", "wNow": 980.2, "whToday": 8100 },
+    { "type": "eim", "activeCount": 1, "measurementType": "net-consumption", "wNow": -2230.2, "whToday": 0 }
+  ],
+  "storage": [{ "type": "acb", "activeCount": 0, "wNow": 0, "whNow": 0, "state": "idle" }]
+}
