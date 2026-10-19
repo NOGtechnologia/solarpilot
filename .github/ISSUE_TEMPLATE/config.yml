@@ -1,11 +1,11 @@
 blank_issues_enabled: false
 contact_links:
   - name: Frage / Hilfe bei der Einrichtung
-    url: https://github.com/solarpilot/solarpilot/discussions
+    url: https://github.com/NOGtechnologia/solarpilot/discussions
     about: Fragen zu Geräten und Einrichtung bitte in den Discussions stellen.
   - name: Dokumentation
-    url: https://github.com/solarpilot/solarpilot/tree/main/docs
+    url: https://github.com/NOGtechnologia/solarpilot/tree/main/docs
     about: Installation, Erste Schritte, Hersteller-Anleitungen, FAQ
   - name: Sicherheitslücke melden
-    url: https://github.com/solarpilot/solarpilot/security/advisories/new
+    url: https://github.com/NOGtechnologia/solarpilot/security/advisories/new
     about: Bitte nicht öffentlich – vertraulich über GitHub melden.

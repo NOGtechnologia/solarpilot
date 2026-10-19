@@ -11,7 +11,7 @@ Windows, macOS oder Linux. Empfohlen: 1 GB RAM, 1 GB freier Speicher.
 ## Docker Compose (empfohlen)
 
 ```bash
-git clone https://github.com/solarpilot/solarpilot.git
+git clone https://github.com/NOGtechnologia/solarpilot.git
 cd solarpilot
 cp .env.example .env          # optional anpassen, z. B. Port
 docker compose up -d
@@ -31,11 +31,11 @@ Mit jedem Release wird ein Multi-Arch-Image (amd64 + arm64) in die GitHub Contai
 ```bash
 docker run -d --name solarpilot --restart unless-stopped \
   -p 8080:8000 -v solarpilot-data:/data \
-  ghcr.io/solarpilot/solarpilot:latest
+  ghcr.io/nogtechnologia/solarpilot:latest
 ```
 
 Raspberry Pi: Raspberry Pi OS **64 Bit** verwenden und Docker mit `curl -fsSL https://get.docker.com | sh` installieren.
-Synology: im Container Manager das Image `ghcr.io/solarpilot/solarpilot` hinzufügen, Port 8080 → 8000 und
+Synology: im Container Manager das Image `ghcr.io/nogtechnologia/solarpilot` hinzufügen, Port 8080 → 8000 und
 einen Ordner auf `/data` mappen.
 
 ## Ohne Docker
@@ -70,7 +70,7 @@ Alle Einstellungen über Umgebungsvariablen in `.env` (siehe [`.env.example`](..
 
 ```bash
 git pull && docker compose up -d --build        # aus dem Quellcode
-docker pull ghcr.io/solarpilot/solarpilot:latest  # bzw. fertiges Image, dann Container neu starten
+docker pull ghcr.io/nogtechnologia/solarpilot:latest  # bzw. fertiges Image, dann Container neu starten
 ```
 
 ## Backup

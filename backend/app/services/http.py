@@ -6,7 +6,7 @@ import httpx
 
 from app import __version__
 
-USER_AGENT = f"SolarPilot/{__version__} (+https://github.com/solarpilot/solarpilot)"
+USER_AGENT = f"SolarPilot/{__version__} (+https://github.com/NOGtechnologia/solarpilot)"
 
 
 def client(timeout: float = 15.0) -> httpx.AsyncClient:

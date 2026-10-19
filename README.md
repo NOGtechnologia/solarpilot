@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="../../actions/workflows/ci.yml"><img alt="Build" src="https://img.shields.io/github/actions/workflow/status/solarpilot/solarpilot/ci.yml?label=build"></a>
+  <a href="../../actions/workflows/ci.yml"><img alt="Build" src="https://img.shields.io/github/actions/workflow/status/NOGtechnologia/solarpilot/ci.yml?label=build"></a>
   <a href="LICENSE"><img alt="Lizenz: MIT" src="https://img.shields.io/badge/license-MIT-F5A524"></a>
   <img alt="Docker" src="https://img.shields.io/badge/docker-amd64%20%7C%20arm64-3B82F6">
   <img alt="Python" src="https://img.shields.io/badge/python-3.12-22C55E">
@@ -48,7 +48,7 @@
 ## Schnellstart (3 Befehle)
 
 ```bash
-git clone https://github.com/solarpilot/solarpilot.git && cd solarpilot
+git clone https://github.com/NOGtechnologia/solarpilot.git && cd solarpilot
 cp .env.example .env
 docker compose up -d
 ```
@@ -68,7 +68,7 @@ SOLARPILOT_STATIC_DIR=../frontend/out python -m app      # → http://localhost:
 Windows: `scripts/run-local.ps1`. Entwicklung mit Hot-Reload: `make dev`.
 </details>
 
-Raspberry Pi / NAS mit fertigem Image: `docker run -d -p 8080:8000 -v solarpilot-data:/data ghcr.io/solarpilot/solarpilot`
+Raspberry Pi / NAS mit fertigem Image: `docker run -d -p 8080:8000 -v solarpilot-data:/data ghcr.io/nogtechnologia/solarpilot`
 – Details in der [Installationsanleitung](docs/installation.md).
 
 ## Einrichtung in 4 Schritten
@@ -164,7 +164,7 @@ energy flow, weather, 7-day PV forecast, day-ahead electricity prices, solar new
 **Quick start**
 
 ```bash
-git clone https://github.com/solarpilot/solarpilot.git && cd solarpilot
+git clone https://github.com/NOGtechnologia/solarpilot.git && cd solarpilot
 cp .env.example .env
 docker compose up -d        # → http://localhost:8080
 ```

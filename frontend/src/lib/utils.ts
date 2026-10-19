@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 /** Repository-URL für Doku-Links (beim Veröffentlichen per NEXT_PUBLIC_REPO_URL setzen). */
-export const REPO_URL = process.env.NEXT_PUBLIC_REPO_URL ?? "https://github.com/solarpilot/solarpilot";
+export const REPO_URL = process.env.NEXT_PUBLIC_REPO_URL ?? "https://github.com/NOGtechnologia/solarpilot";
 
 export const COLORS = {
   solar: "#F5A524",

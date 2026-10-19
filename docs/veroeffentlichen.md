@@ -37,7 +37,7 @@ Zusätzlich empfohlen: Secret-Scan mit [gitleaks](https://github.com/gitleaks/gi
 
 ## 2. Repo-Namen eintragen und hochladen
 
-Den Platzhalter `solarpilot/solarpilot` (Badges, Links, Docker-Image) durch deinen GitHub-Pfad ersetzen:
+Den Platzhalter `NOGtechnologia/solarpilot` (Badges, Links, Docker-Image) durch deinen GitHub-Pfad ersetzen:
 
 ```bash
 python scripts/set-repo.py <dein-github-name>/solarpilot
@@ -84,7 +84,7 @@ Der Workflow *Release* baut das Multi-Arch-Image (amd64 + arm64, ca. 15–25 Min
 mit dem Changelog an. Danach:
 
 1. *Packages* → `solarpilot` → *Package settings* → **Change visibility → Public**
-   (sonst kann niemand `docker pull ghcr.io/<name>/solarpilot` ausführen)
+   (sonst kann niemand `docker pull ghcr.io/nogtechnologia/solarpilot` ausführen)
 2. Release öffnen → *Edit* → Screenshots aus `docs/images/` per Drag & Drop ergänzen → *Update release*
 
 Text für die Release-Beschreibung (oben einfügen):
@@ -98,7 +98,7 @@ OpenDTU, Shelly, MQTT und Home Assistant.
 
 **Schnellstart:** `docker compose up -d` → http://localhost:8080 → „Demo starten“
 
-Docker-Image: `ghcr.io/<name>/solarpilot:1.0.0` (amd64 + arm64 / Raspberry Pi)
+Docker-Image: `ghcr.io/nogtechnologia/solarpilot:1.0.0` (amd64 + arm64 / Raspberry Pi)
 ```
 
 ## 5. Bekannt machen
@@ -119,7 +119,7 @@ Ich habe SolarPilot veröffentlicht – ein Open-Source-Dashboard für PV-Anlage
 mit SMA, Fronius, SolarEdge, Huawei, Victron, OpenDTU u. a., zeigt den Energiefluss live, eine 7-Tage-PV-
 Prognose, Börsenstrompreise und gibt Tipps (z. B. beste Zeit für Waschmaschine/E-Auto). Läuft per Docker
 auf dem Raspberry Pi. Feedback und Tests mit echten Anlagen sind sehr willkommen!
-https://github.com/<name>/solarpilot
+https://github.com/NOGtechnologia/solarpilot
 ```
 
 ## 6. Danach

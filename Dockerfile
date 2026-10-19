@@ -1,5 +1,5 @@
-# All-in-one-Image (Backend liefert das statische Frontend selbst aus) – für Release und Raspberry Pi.
-#   docker run -p 8080:8000 -v solarpilot:/data ghcr.io/<owner>/solarpilot
+# All-in-one-Image (Backend liefert das statische Frontend selbst aus) ? f?r Release und Raspberry Pi.
+#   docker run -p 8080:8000 -v solarpilot:/data ghcr.io/nogtechnologia/solarpilot
 FROM --platform=$BUILDPLATFORM node:24-alpine AS frontend
 WORKDIR /src
 COPY frontend/package.json frontend/package-lock.json ./
