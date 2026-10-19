@@ -1,6 +1,6 @@
 "use client";
 
-import { Cpu } from "lucide-react";
+import { Cpu } from "@phosphor-icons/react";
 
 import { Card, CardHeader } from "@/components/ui/card";
 import { fmtPower, fmtRelative } from "@/lib/format";

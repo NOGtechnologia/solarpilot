@@ -20,8 +20,16 @@ export function KpiTile({
   return (
     <div className="relative overflow-hidden rounded-[var(--radius-card)] border border-border bg-card p-4">
       <div className="absolute inset-x-0 top-0 h-[3px]" style={{ background: accent }} aria-hidden />
-      <div className="flex items-center gap-1.5 text-[13px] text-muted">
-        {icon}
+      <div className="flex items-center gap-2 text-[13px] text-muted">
+        {icon && (
+          <span
+            className="flex h-7 w-7 items-center justify-center rounded-lg [&>svg]:h-[17px] [&>svg]:w-[17px]"
+            style={{ background: `${accent}22`, color: accent }}
+            aria-hidden
+          >
+            {icon}
+          </span>
+        )}
         {label}
       </div>
       <div className="mt-2 flex items-baseline gap-1">

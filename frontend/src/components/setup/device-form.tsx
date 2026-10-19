@@ -1,6 +1,6 @@
 "use client";
 
-import { CheckCircle2, Loader2, XCircle } from "lucide-react";
+import { CheckCircle, CircleNotch, XCircle } from "@phosphor-icons/react";
 import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -141,12 +141,12 @@ export function DeviceForm({
       </div>
       <div className="flex flex-wrap items-center gap-3">
         <Button onClick={runTest} disabled={test.state === "busy"}>
-          {test.state === "busy" ? <Loader2 size={16} className="animate-spin" /> : null}
+          {test.state === "busy" ? <CircleNotch size={16} className="animate-spin" /> : null}
           {test.state === "busy" ? t("setup.testing") : t("setup.test")}
         </Button>
         {test.state === "ok" && (
           <span role="status" className="flex items-center gap-1.5 text-sm text-success">
-            <CheckCircle2 size={16} /> {t("setup.test_ok")} · PV {p(test.snap?.pv_power_w)}
+            <CheckCircle size={16} /> {t("setup.test_ok")} · PV {p(test.snap?.pv_power_w)}
             {test.snap?.grid_power_w != null && ` · ${t("flow.grid")} ${p(test.snap.grid_power_w)}`}
             {test.snap?.battery_soc_pct != null && ` · ${Math.round(test.snap.battery_soc_pct)} %`}
           </span>

@@ -1,17 +1,20 @@
+import { SunHorizon } from "@phosphor-icons/react/dist/ssr";
+
+/** App-Icon: Amber-Verlauf mit Sonnenaufgang (Phosphor „SunHorizon“, gefüllt). */
 export function Logo({ size = 28 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 64 64" aria-hidden focusable="false">
-      <defs>
-        <linearGradient id="sp-logo" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#FBBF24" />
-          <stop offset="1" stopColor="#F97316" />
-        </linearGradient>
-      </defs>
-      <rect width="64" height="64" rx="16" fill="#0B0F14" />
-      <path d="M12 44a20 20 0 0 1 40 0" fill="none" stroke="url(#sp-logo)" strokeWidth="5" strokeLinecap="round" />
-      <circle cx="32" cy="44" r="9" fill="url(#sp-logo)" />
-      <path d="M32 14v6M14.5 21.5l4.2 4.2M49.5 21.5l-4.2 4.2" stroke="#FBBF24" strokeWidth="4" strokeLinecap="round" />
-      <path d="M8 52h48" stroke="#8B5CF6" strokeWidth="4" strokeLinecap="round" />
-    </svg>
+    <span
+      aria-hidden
+      className="inline-flex shrink-0 items-center justify-center"
+      style={{
+        width: size,
+        height: size,
+        borderRadius: size * 0.28,
+        background: "linear-gradient(140deg, #FCD34D 0%, #F5A524 45%, #EA580C 100%)",
+        boxShadow: "inset 0 1px 0 rgba(255,255,255,.45), 0 2px 8px rgba(245,165,36,.35)",
+      }}
+    >
+      <SunHorizon weight="fill" size={Math.round(size * 0.68)} color="#FFFFFF" />
+    </span>
   );
 }

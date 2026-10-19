@@ -1,5 +1,6 @@
 "use client";
 
+import { IconContext } from "@phosphor-icons/react";
 import { ThemeProvider } from "next-themes";
 import { usePathname, useRouter } from "next/navigation";
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
@@ -92,9 +93,12 @@ function AppProvider({ children }: { children: ReactNode }) {
 export function Providers({ children }: { children: ReactNode }) {
   return (
     <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
-      <I18nProvider>
-        <AppProvider>{children}</AppProvider>
-      </I18nProvider>
+      {/* Phosphor-Icons einheitlich im Duotone-Stil */}
+      <IconContext.Provider value={{ weight: "duotone", mirrored: false }}>
+        <I18nProvider>
+          <AppProvider>{children}</AppProvider>
+        </I18nProvider>
+      </IconContext.Provider>
     </ThemeProvider>
   );
 }

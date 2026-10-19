@@ -1,6 +1,6 @@
 "use client";
 
-import { BarChart3, CloudSun, Languages, LayoutDashboard, LogOut, Moon, Settings, Sun } from "lucide-react";
+import { ChartBar, CloudSun, Translate, SquaresFour, SignOut, Moon, GearSix, Sun } from "@phosphor-icons/react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
@@ -14,10 +14,10 @@ import { Logo } from "./logo";
 import { useApp } from "./providers";
 
 const NAV = [
-  { href: "/", key: "nav.dashboard", icon: LayoutDashboard },
+  { href: "/", key: "nav.dashboard", icon: SquaresFour },
   { href: "/forecast/", key: "nav.forecast", icon: CloudSun },
-  { href: "/reports/", key: "nav.reports", icon: BarChart3 },
-  { href: "/settings/", key: "nav.settings", icon: Settings },
+  { href: "/reports/", key: "nav.reports", icon: ChartBar },
+  { href: "/settings/", key: "nav.settings", icon: GearSix },
 ] as const;
 
 function ThemeToggle() {
@@ -49,7 +49,7 @@ function LangToggle() {
       aria-label={t("lang.toggle")}
       title={t("lang.toggle")}
     >
-      <Languages size={16} />
+      <Translate size={16} />
       {lang.toUpperCase()}
     </button>
   );
@@ -93,7 +93,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                     isActive(n.href) ? "bg-card-2 text-fg" : "text-muted hover:text-fg",
                   )}
                 >
-                  <n.icon size={16} />
+                  <n.icon size={18} />
                   {t(n.key)}
                 </Link>
               ))}
@@ -110,7 +110,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                 aria-label={t("nav.logout")}
                 title={t("nav.logout")}
               >
-                <LogOut size={17} />
+                <SignOut size={17} />
               </button>
             )}
           </div>
@@ -135,7 +135,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                   isActive(n.href) ? "text-solar-text" : "text-muted",
                 )}
               >
-                <n.icon size={20} />
+                <n.icon size={22} />
                 {t(n.key)}
               </Link>
             ))}

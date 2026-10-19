@@ -1,6 +1,6 @@
 "use client";
 
-import { MapPin } from "lucide-react";
+import { MapPin } from "@phosphor-icons/react";
 
 import { useApp } from "@/components/providers";
 import { useI18n } from "@/lib/i18n";

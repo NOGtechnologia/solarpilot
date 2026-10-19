@@ -1,6 +1,6 @@
 "use client";
 
-import { CloudSun, Target, TrendingUp } from "lucide-react";
+import { CloudSun, Target, TrendUp } from "@phosphor-icons/react";
 import { useCallback } from "react";
 
 import { EChart, chartTheme } from "@/components/charts/echart";
@@ -172,7 +172,7 @@ export default function ForecastPage() {
             />
             <KpiTile
               label={t("forecast.correction")}
-              icon={<TrendingUp size={14} />}
+              icon={<TrendUp size={14} />}
               accent={COLORS.load}
               value={correction ? `× ${fmtNumber(correction.factor, lang, 2)}` : "–"}
               sub={correction ? `${correction.days} d` : undefined}

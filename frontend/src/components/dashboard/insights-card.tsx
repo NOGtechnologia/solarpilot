@@ -1,6 +1,6 @@
 "use client";
 
-import { AlertTriangle, BatteryFull, Car, Info, Lightbulb, Sparkles, WashingMachine, Zap } from "lucide-react";
+import { Warning, BatteryFull, Car, Info, Lightbulb, Sparkle, WashingMachine, Lightning } from "@phosphor-icons/react";
 
 import { Card, CardHeader } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/form";
@@ -13,10 +13,10 @@ const ICONS: Record<string, typeof Info> = {
   "insight.surplus": WashingMachine,
   "insight.battery_full": BatteryFull,
   "insight.ev": Car,
-  "insight.underperformance": AlertTriangle,
-  "insight.offline": AlertTriangle,
-  "insight.cheap_power": Zap,
-  "insight.expensive_now": Zap,
+  "insight.underperformance": Warning,
+  "insight.offline": Warning,
+  "insight.cheap_power": Lightning,
+  "insight.expensive_now": Lightning,
 };
 
 export function insightText(i: Insight, t: (k: string, p?: Record<string, unknown>) => string, lang: "de" | "en", tz?: string) {
@@ -54,7 +54,7 @@ export function InsightsCard({
           {data.summary?.text && (
             <div className="rounded-xl border border-grid-export/30 bg-grid-export/10 p-3 text-sm">
               <div className="mb-1 flex items-center gap-1.5 text-[12px] font-medium text-grid-export">
-                <Sparkles size={13} /> {t("insights.ai")}
+                <Sparkle size={13} /> {t("insights.ai")}
               </div>
               <p className="leading-relaxed">{data.summary.text}</p>
             </div>

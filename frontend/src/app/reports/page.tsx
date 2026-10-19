@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeft, ChevronRight, Download, Trophy } from "lucide-react";
+import { CaretLeft, CaretRight, Coins, DownloadSimple, HouseLine, Leaf, SolarPanel, Trophy } from "@phosphor-icons/react";
 import { useCallback, useState } from "react";
 
 import { EChart, chartTheme } from "@/components/charts/echart";
@@ -72,11 +72,11 @@ export default function ReportsPage() {
           <h1 className="text-2xl font-semibold tracking-tight">{t("reports.title")}</h1>
           <div className="mt-1 flex items-center gap-1">
             <Button size="icon" variant="ghost" aria-label={t("chart.prev")} onClick={() => move(-1)}>
-              <ChevronLeft size={18} />
+              <CaretLeft size={18} />
             </Button>
             <span className="min-w-36 text-center text-sm font-medium">{fmtDate(`${month}-15`, lang, { month: "long", year: "numeric" })}</span>
             <Button size="icon" variant="ghost" aria-label={t("chart.next")} onClick={() => move(1)} disabled={month >= current}>
-              <ChevronRight size={18} />
+              <CaretRight size={18} />
             </Button>
           </div>
         </div>
@@ -87,7 +87,7 @@ export default function ReportsPage() {
             className={cn(buttonVariants({ variant: "primary", size: "md" }))}
             download
           >
-            <Download size={16} /> {t("reports.pdf")}
+            <DownloadSimple size={16} /> {t("reports.pdf")}
           </a>
         </div>
       </div>
@@ -103,14 +103,15 @@ export default function ReportsPage() {
           <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
             <KpiTile
               label={t("reports.yield")}
+              icon={<SolarPanel />}
               accent={COLORS.solar}
               value={e(tot?.pv_wh).value}
               unit={e(tot?.pv_wh).unit}
               sub={data?.change_pct != null ? `${data.change_pct > 0 ? "+" : ""}${fmtNumber(data.change_pct, lang, 1)} % ${t("reports.vs_last_year")}` : t("reports.no_prev")}
             />
-            <KpiTile label={t("reports.savings")} accent={COLORS.solar} value={fmtCurrency(tot?.savings_eur, lang)} />
-            <KpiTile label={t("reports.self")} accent={COLORS.load} value={fmtPct(tot?.self_consumption_pct, lang)} sub={`${t("reports.autarky")} ${fmtPct(tot?.autarky_pct, lang)}`} />
-            <KpiTile label={t("reports.co2")} accent={COLORS.gridExport} value={tot ? fmtNumber(tot.co2_kg, lang) : "–"} unit="kg" />
+            <KpiTile icon={<Coins />} label={t("reports.savings")} accent={COLORS.solar} value={fmtCurrency(tot?.savings_eur, lang)} />
+            <KpiTile icon={<HouseLine />} label={t("reports.self")} accent={COLORS.load} value={fmtPct(tot?.self_consumption_pct, lang)} sub={`${t("reports.autarky")} ${fmtPct(tot?.autarky_pct, lang)}`} />
+            <KpiTile icon={<Leaf />} label={t("reports.co2")} accent={COLORS.gridExport} value={tot ? fmtNumber(tot.co2_kg, lang) : "–"} unit="kg" />
           </div>
           <div className="grid gap-4 lg:grid-cols-3">
             <Card className="lg:col-span-2">

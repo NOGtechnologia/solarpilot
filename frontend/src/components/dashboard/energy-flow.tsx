@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { Home, Sun, UtilityPole } from "lucide-react";
+import { HouseLine, PlugsConnected, SolarPanel } from "@phosphor-icons/react";
 import type { ReactNode } from "react";
 
 import { flowDots, flowDuration, flows, type NodeId } from "@/lib/flow";
@@ -56,8 +56,8 @@ function Node({
     <g>
       {active && <circle cx={p.x} cy={p.y} r={R + 8} fill={color} opacity={0.12} />}
       <circle cx={p.x} cy={p.y} r={R} fill="var(--card-2)" stroke={color} strokeWidth={active ? 2.5 : 1.5} />
-      <foreignObject x={p.x - 14} y={p.y - 14} width={28} height={28}>
-        <div style={{ color, display: "flex" }}>{icon}</div>
+      <foreignObject x={p.x - 17} y={p.y - 17} width={34} height={34}>
+        <div style={{ color, display: "flex", width: 34, height: 34, alignItems: "center", justifyContent: "center" }}>{icon}</div>
       </foreignObject>
     </g>
   );
@@ -151,9 +151,9 @@ export function EnergyFlow({ snapshot }: { snapshot: Snapshot | null | undefined
         );
       })}
 
-      <Node id="pv" color={COLORS.solar} icon={<Sun size={28} />} active={pv > 15} />
-      <Node id="grid" color={gridColor} icon={<UtilityPole size={26} />} active={Math.abs(grid) > 15} />
-      <Node id="home" color={COLORS.load} icon={<Home size={26} />} active={(load ?? 0) > 15} />
+      <Node id="pv" color={COLORS.solar} icon={<SolarPanel size={34} />} active={pv > 15} />
+      <Node id="grid" color={gridColor} icon={<PlugsConnected size={32} />} active={Math.abs(grid) > 15} />
+      <Node id="home" color={COLORS.load} icon={<HouseLine size={32} />} active={(load ?? 0) > 15} />
       {hasBattery && (
         <g>
           <circle cx={POS.battery.x} cy={POS.battery.y} r={R} fill="var(--card-2)" stroke={COLORS.battery} strokeWidth={Math.abs(batt ?? 0) > 15 ? 2.5 : 1.5} />

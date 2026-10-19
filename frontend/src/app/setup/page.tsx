@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, Cloud, Cpu, MapPin, Search, Wifi } from "lucide-react";
+import { Check, Cloud, Cpu, MapPin, MagnifyingGlass, WifiHigh } from "@phosphor-icons/react";
 import { useRouter } from "next/navigation";
 import { useMemo, useState, type FormEvent } from "react";
 
@@ -178,7 +178,7 @@ export default function SetupPage() {
                 <form onSubmit={search} className="flex gap-2">
                   <Input aria-label={t("setup.search")} placeholder={t("setup.search_ph")} value={query} onChange={(e) => setQuery(e.target.value)} />
                   <Button type="submit" aria-label={t("setup.search")}>
-                    <Search size={16} />
+                    <MagnifyingGlass size={16} />
                   </Button>
                 </form>
                 {results.length > 0 && (
@@ -239,7 +239,7 @@ export default function SetupPage() {
                     )}
                   >
                     <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-card-2 text-muted">
-                      {a.connection === "cloud" ? <Cloud size={16} /> : a.connection === "simulated" ? <Cpu size={16} /> : <Wifi size={16} />}
+                      {a.connection === "cloud" ? <Cloud size={16} /> : a.connection === "simulated" ? <Cpu size={16} /> : <WifiHigh size={16} />}
                     </span>
                     <span className="min-w-0">
                       <span className="block font-medium">{a.name}</span>

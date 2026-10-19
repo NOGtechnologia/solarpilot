@@ -1,6 +1,6 @@
 "use client";
 
-import { BatteryCharging, Coins, Gauge, Home as HomeIcon, Leaf, Sun } from "lucide-react";
+import { BatteryCharging, Coins, Gauge, HouseLine as HomeIcon, Leaf, Sun } from "@phosphor-icons/react";
 import { useMemo } from "react";
 
 import { CountUp } from "@/components/dashboard/count-up";

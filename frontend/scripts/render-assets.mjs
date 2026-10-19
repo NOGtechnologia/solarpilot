@@ -51,7 +51,7 @@ if (mode === "screenshots") {
   const page = await ctx.newPage();
   const shot = async (path, name, opts = {}) => {
     await page.goto(`${url}${path}`);
-    await page.waitForTimeout(3500);
+    await page.waitForTimeout(6000);
     await page.screenshot({ path: join(out, name), ...opts });
   };
   await shot("/", "dashboard-dark.png");

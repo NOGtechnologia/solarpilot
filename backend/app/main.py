@@ -12,6 +12,7 @@ from fastapi.middleware.gzip import GZipMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from sqlmodel import select
+from starlette.exceptions import HTTPException
 
 from . import __version__
 from .adapters.registry import load_all
@@ -136,8 +137,37 @@ def create_app() -> FastAPI:
 
     static = _static_dir()
     if static:
-        app.mount("/", StaticFiles(directory=static, html=True), name="static")
+        app.mount("/", NextStaticFiles(directory=static, html=True), name="static")
     return app
+
+
+def next_segment_path(path: str) -> str | None:
+    """Next 16 fragt ``__next.seg.__PAGE__.txt`` an, exportiert ``__next.seg/__PAGE__.txt``."""
+    head, _, name = path.replace("\\", "/").rpartition("/")
+    if not (name.startswith("__next.") and name.endswith(".txt")):
+        return None
+    parts = name[: -len(".txt")].split(".")
+    if len(parts) < 3:
+        return None
+    alt = f"__next.{parts[1]}/" + "/".join(parts[2:]) + ".txt"
+    return f"{head}/{alt}" if head else alt
+
+
+class NextStaticFiles(StaticFiles):
+    async def get_response(self, path, scope):
+        if path.replace("\\", "/").startswith("api/"):
+            raise HTTPException(404, "Not Found")  # API-404 als JSON, nicht als HTML-Seite
+        alt = next_segment_path(path)
+        try:
+            response = await super().get_response(path, scope)
+        except HTTPException as exc:
+            if alt is None or exc.status_code != 404:
+                raise
+            return await super().get_response(alt, scope)
+        # mit html=True liefert StaticFiles bei 404 die 404.html statt einer Exception
+        if alt is not None and response.status_code == 404:
+            return await super().get_response(alt, scope)
+        return response
 
 
 def _static_dir() -> Path | None:

@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { CaretLeft, CaretRight } from "@phosphor-icons/react";
 import { useCallback, useMemo, useState } from "react";
 
 import { EChart, chartTheme, type EChartsOption } from "@/components/charts/echart";
@@ -197,11 +197,11 @@ export function HistoryChart({ site, timeZone }: { site: string; timeZone?: stri
         />
         <div className="flex items-center gap-1">
           <Button size="icon" variant="ghost" aria-label={t("chart.prev")} onClick={() => move(-1)}>
-            <ChevronLeft size={18} />
+            <CaretLeft size={18} />
           </Button>
           <span className="num min-w-28 text-center text-sm font-medium">{label}</span>
           <Button size="icon" variant="ghost" aria-label={t("chart.next")} onClick={() => move(1)} disabled={date >= today}>
-            <ChevronRight size={18} />
+            <CaretRight size={18} />
           </Button>
         </div>
       </div>

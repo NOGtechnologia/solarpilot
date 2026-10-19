@@ -1,6 +1,6 @@
 "use client";
 
-import { Plus, Trash2 } from "lucide-react";
+import { Plus, Trash } from "@phosphor-icons/react";
 
 import { Button } from "@/components/ui/button";
 import { Field, Input } from "@/components/ui/form";
@@ -49,7 +49,7 @@ export function ArraysEditor({ arrays, onChange }: { arrays: PvArray[]; onChange
               </div>
               {arrays.length > 1 && (
                 <Button size="icon" variant="ghost" aria-label={t("common.delete")} onClick={() => onChange(arrays.filter((_, j) => j !== i))}>
-                  <Trash2 size={16} />
+                  <Trash size={16} />
                 </Button>
               )}
             </div>

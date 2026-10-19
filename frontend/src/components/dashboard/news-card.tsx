@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink, Newspaper } from "lucide-react";
+import { ArrowSquareOut, Newspaper } from "@phosphor-icons/react";
 
 import { Card, CardHeader } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/form";
@@ -35,7 +35,7 @@ export function NewsCard({ data }: { data: { items: NewsItem[]; enabled: boolean
               >
                 <span className="flex items-start gap-1 text-sm font-medium leading-snug">
                   <span className="line-clamp-2">{n.title}</span>
-                  <ExternalLink size={12} className="mt-1 shrink-0 text-muted opacity-0 group-hover:opacity-100" aria-hidden />
+                  <ArrowSquareOut size={12} className="mt-1 shrink-0 text-muted opacity-0 group-hover:opacity-100" aria-hidden />
                 </span>
                 <span className="text-[11px] text-muted">
                   {n.source} · {fmtRelative(n.published, lang)}

@@ -1,6 +1,6 @@
 "use client";
 
-import { AlertTriangle, CloudSun, Wind } from "lucide-react";
+import { Warning, CloudSun, Wind } from "@phosphor-icons/react";
 
 import { Card, CardHeader } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/form";
@@ -47,7 +47,7 @@ export function WeatherCard({
       />
       {data.alerts.length > 0 && (
         <div className="mb-3 flex items-start gap-2 rounded-xl border border-grid-import/40 bg-grid-import/10 p-2.5 text-[13px]">
-          <AlertTriangle size={16} className="mt-0.5 shrink-0 text-grid-import" />
+          <Warning size={16} className="mt-0.5 shrink-0 text-grid-import" />
           <span>
             <strong className="font-medium">{t("weather.alerts")}:</strong>{" "}
             {lang === "de" ? data.alerts[0].headline_de : data.alerts[0].headline_en || data.alerts[0].headline_de}

@@ -1,6 +1,6 @@
 "use client";
 
-import { Zap } from "lucide-react";
+import { Lightning } from "@phosphor-icons/react";
 import { useCallback } from "react";
 
 import { EChart, chartTheme } from "@/components/charts/echart";
@@ -81,7 +81,7 @@ export function PriceChart({ data }: { data: PricesResponse | undefined }) {
 
   return (
     <Card>
-      <CardHeader title={t("prices.title")} icon={<Zap size={14} />} action={data?.zone ? <span className="text-[11px] text-muted">{data.zone}</span> : null} />
+      <CardHeader title={t("prices.title")} icon={<Lightning size={14} />} action={data?.zone ? <span className="text-[11px] text-muted">{data.zone}</span> : null} />
       {!data ? (
         <Skeleton className="h-48" />
       ) : !data.points.length ? (

@@ -1,6 +1,6 @@
 "use client";
 
-import { Play, Plus } from "lucide-react";
+import { Play, Plus, SolarRoof } from "@phosphor-icons/react";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -32,11 +32,9 @@ export function EmptyState() {
   return (
     <section className="relative mx-auto mt-6 max-w-xl overflow-hidden rounded-[24px] border border-border bg-card p-8 text-center">
       <div aria-hidden className="pointer-events-none absolute inset-x-0 -top-24 mx-auto h-48 w-48 rounded-full bg-solar/30 blur-3xl" />
-      <svg viewBox="0 0 120 70" className="relative mx-auto mb-5 h-20" aria-hidden>
-        <path d="M10 62a50 50 0 0 1 100 0" fill="none" stroke="var(--border)" strokeWidth="3" strokeDasharray="4 6" />
-        <circle cx="60" cy="24" r="14" fill="#F5A524" />
-        <path d="M20 62h80" stroke="#8B5CF6" strokeWidth="3" strokeLinecap="round" />
-      </svg>
+      <div className="relative mx-auto mb-5 flex h-24 w-24 items-center justify-center rounded-[28px] border border-solar/30 bg-solar/10">
+        <SolarRoof size={60} className="text-solar" aria-hidden />
+      </div>
       <h1 className="relative text-2xl font-semibold tracking-tight">{t("empty.title")}</h1>
       <p className="relative mx-auto mt-2 max-w-md text-sm leading-relaxed text-muted">{t("empty.text")}</p>
       {isAdmin && (

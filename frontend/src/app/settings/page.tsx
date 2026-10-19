@@ -1,6 +1,6 @@
 "use client";
 
-import { Download, Pencil, Plus, Send, Trash2, Upload } from "lucide-react";
+import { DownloadSimple, PencilSimple, Plus, PaperPlaneTilt, Trash, UploadSimple } from "@phosphor-icons/react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState, type ReactNode } from "react";
@@ -250,10 +250,10 @@ function SitesSection() {
             </div>
             <div className="flex gap-1">
               <Button size="sm" variant="ghost" onClick={() => setEditSite(editSite === s.id ? null : s.id)}>
-                <Pencil size={14} /> {t("common.edit")}
+                <PencilSimple size={14} /> {t("common.edit")}
               </Button>
               <Button size="sm" variant="danger" onClick={() => removeSite(s.id)}>
-                <Trash2 size={14} />
+                <Trash size={14} />
               </Button>
             </div>
           </div>
@@ -272,10 +272,10 @@ function SitesSection() {
                   </div>
                   <div className="flex shrink-0 gap-1">
                     <Button size="sm" variant="ghost" aria-label={t("common.edit")} onClick={() => setEditDevice(editDevice === `d${d.id}` ? null : `d${d.id}`)}>
-                      <Pencil size={14} />
+                      <PencilSimple size={14} />
                     </Button>
                     <Button size="sm" variant="ghost" aria-label={t("common.delete")} onClick={() => removeDevice(d.id)}>
-                      <Trash2 size={14} />
+                      <Trash size={14} />
                     </Button>
                   </div>
                 </div>
@@ -297,11 +297,11 @@ function SitesSection() {
           <Plus size={16} /> {t("nav.setup")}
         </Link>
         <a href="/api/config/export" className={cn(buttonVariants({ variant: "secondary" }))}>
-          <Download size={16} /> {t("settings.export")}
+          <DownloadSimple size={16} /> {t("settings.export")}
         </a>
       </div>
       <Card>
-        <CardHeader title={t("settings.import")} icon={<Upload size={14} />} />
+        <CardHeader title={t("settings.import")} icon={<UploadSimple size={14} />} />
         <Textarea aria-label={t("settings.import")} rows={6} value={yaml} onChange={(e) => setYaml(e.target.value)} placeholder={"sites:\n  - name: Wohnhaus\n    location: { lat: 53.08, lon: 8.80 }"} />
         <Button className="mt-3" onClick={importYaml} disabled={!yaml.trim()}>
           {t("settings.import")}
@@ -440,7 +440,7 @@ function NotificationsSection() {
         title={title}
         action={
           <Button size="sm" onClick={() => test(name)} disabled={!draft[name]?.enabled}>
-            <Send size={14} /> {t("settings.test")}
+            <PaperPlaneTilt size={14} /> {t("settings.test")}
           </Button>
         }
       />
@@ -520,7 +520,7 @@ function SmartHomeSection() {
   if (!draft) return <Skeleton className="h-40" />;
   return (
     <Card>
-      <CardHeader title="MQTT · Home Assistant" />
+      <CardHeader title="MQTT · HouseLine Assistant" />
       <p className="mb-3 text-sm text-muted">{t("settings.mqtt_hint")}</p>
       <Switch id="mq-en" label={t("settings.enabled")} checked={!!draft.enabled} onChange={(v) => set(["enabled"], v)} />
       <div className="mt-3">
@@ -634,7 +634,7 @@ function UsersSection() {
                   }
                 }}
               >
-                <Trash2 size={14} />
+                <Trash size={14} />
               </Button>
             )}
           </li>
