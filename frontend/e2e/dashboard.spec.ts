@@ -11,10 +11,12 @@ async function login(page: Page) {
   await page.getByLabel("Benutzername").fill(USER);
   await page.getByLabel("Passwort").fill(PASS);
   await page.getByRole("button", { name: /Anmelden|Konto anlegen/ }).click();
-  await expect(page).toHaveURL(/\/$/);
+  await expect(page).toHaveURL((u) => u.pathname === "/");
 }
 
 test("Ersteinrichtung: Admin anlegen, Leerzustand mit Demo-Button", async ({ page }) => {
+  const status = await (await page.request.get("/api/auth/status")).json();
+  test.skip(status.has_users, "Admin existiert bereits (Wiederholung)");
   await page.goto("/");
   await expect(page).toHaveURL(/\/login\/$/);
   await expect(page.getByRole("heading", { name: "Willkommen bei SolarPilot" })).toBeVisible();
@@ -70,7 +72,9 @@ test("Prognose- und Berichtsseite laden", async ({ page }) => {
 
 test("Einstellungen: Tarif speichern", async ({ page }) => {
   await login(page);
-  await page.goto("/settings/#tariff");
+  await page.getByRole("link", { name: "Einstellungen" }).first().click();
+  await expect(page.getByRole("heading", { name: "Einstellungen" })).toBeVisible();
+  await page.getByRole("navigation", { name: "Einstellungen" }).getByRole("button", { name: "Tarif" }).click();
   const buy = page.getByLabel("Strompreis (€/kWh)");
   await buy.fill("0.35");
   await page.getByRole("button", { name: "Speichern" }).click();
@@ -90,7 +94,7 @@ test("Assistent: Hersteller wählen und Verbindung testen", async ({ page }) => 
   await expect(page.getByText("Verbindung erfolgreich")).toBeVisible({ timeout: 20_000 });
   await page.getByRole("button", { name: "Weiter" }).click();
   await page.getByRole("button", { name: "Anlage speichern" }).click();
-  await expect(page).toHaveURL(/\/$/);
+  await expect(page).toHaveURL((u) => u.pathname === "/");
   await expect(page.getByRole("tab", { name: "Alle Anlagen" })).toBeVisible();
   await expect(page.getByRole("tab", { name: "Testhaus" })).toBeVisible();
 });
