@@ -5,11 +5,11 @@ Lokal über Modbus TCP. Die Cloud-API ist stark limitiert (ca. 300 Abfragen/Tag)
 ## Einrichtung
 
 1. Modbus TCP aktivieren: über SetApp (*Kommunikation → Modbus TCP*) oder das Display.
-   ![Screenshot Schritt 1](../images/adapters/solaredge-1.png)
+   <!-- Screenshot Schritt 1: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 2. Port ist meist **1502** (neuere Geräte) oder 502.
-   ![Screenshot Schritt 2](../images/adapters/solaredge-2.png)
+   <!-- Screenshot Schritt 2: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 3. Unit-ID 1. Ein angeschlossener SolarEdge-Zähler wird automatisch erkannt (Modell 203).
-   ![Screenshot Schritt 3](../images/adapters/solaredge-3.png)
+   <!-- Screenshot Schritt 3: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 
 ## Hinweise
 

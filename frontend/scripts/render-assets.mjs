@@ -81,4 +81,64 @@ if (mode === "screenshots") {
   console.log("Screenshots erzeugt in", out);
 }
 
+if (mode === "login") {
+  // Erster Start (frische Datenbank ohne Benutzer): Admin-Konto anlegen
+  const url = process.env.SP_URL ?? "http://localhost:8000";
+  const ctx = await browser.newContext({ viewport: { width: 520, height: 560 }, colorScheme: "dark" });
+  await ctx.addInitScript(() => localStorage.setItem("sp_lang", "de"));
+  const page = await ctx.newPage();
+  await page.goto(`${url}/login/`);
+  await page.getByText("Willkommen bei SolarPilot").waitFor();
+  await page.waitForTimeout(800);
+  await page.screenshot({ path: join(repo, "docs", "images", "setup", "login.png") });
+  console.log("Login-Screenshot erzeugt");
+}
+
+if (mode === "wizard") {
+  // Einrichtungs-Assistent und Einstellungen für die Anleitungen in docs/
+  const url = process.env.SP_URL ?? "http://localhost:8000";
+  const out = join(repo, "docs", "images", "setup");
+  mkdirSync(out, { recursive: true });
+  const ctx = await browser.newContext({ viewport: { width: 1100, height: 820 }, colorScheme: "dark" });
+  const res = await ctx.request.post(`${url}/api/auth/login`, {
+    data: { username: process.env.SP_USER, password: process.env.SP_PASS },
+  });
+  if (!res.ok()) throw new Error(`Login fehlgeschlagen: ${res.status()}`);
+  await ctx.addInitScript(() => {
+    localStorage.setItem("sp_lang", "de");
+    localStorage.setItem("theme", "dark");
+  });
+  const page = await ctx.newPage();
+  const snap = async (name) => {
+    await page.waitForTimeout(1500);
+    await page.screenshot({ path: join(out, name) });
+  };
+  await page.goto(`${url}/setup/`);
+  await page.getByLabel("Name der Anlage").fill("Wohnhaus");
+  await page.getByPlaceholder("Stadt oder Adresse").fill("Bremen");
+  await page.getByRole("button", { name: "Ort suchen" }).click();
+  await page.getByRole("button", { name: /Bremen/ }).first().click();
+  await page.waitForTimeout(2500); // Kartenkacheln laden
+  await snap("1-standort.png");
+  await page.getByRole("button", { name: "Weiter" }).click();
+  await snap("2-hersteller.png");
+  await page.getByRole("button", { name: /Fronius Solar API/ }).click();
+  await page.getByLabel(/Host \/ IP-Adresse/).fill("192.168.178.50");
+  await snap("3-verbindung.png");
+  await page.getByRole("button", { name: "Zurück" }).click();
+  await page.getByPlaceholder("Hersteller filtern").fill("Demo");
+  await page.getByRole("button", { name: /Demo-Simulator/ }).click();
+  await page.getByRole("button", { name: "Verbindung testen" }).click();
+  await page.getByText("Verbindung erfolgreich").waitFor();
+  await snap("3-verbindung-erfolgreich.png");
+  await page.getByRole("button", { name: "Weiter" }).click();
+  await snap("4-anlage.png");
+  for (const [hash, name] of [["sites", "einstellungen-anlagen.png"], ["tariff", "einstellungen-tarif.png"], ["notifications", "einstellungen-benachrichtigungen.png"], ["smarthome", "einstellungen-mqtt.png"]]) {
+    await page.goto(`${url}/settings/#${hash}`);
+    await page.reload();
+    await snap(name);
+  }
+  console.log("Assistent-Screenshots erzeugt in", out);
+}
+
 await browser.close();

@@ -5,11 +5,11 @@ Einfachster Einstieg: Die Solar API v1 ist im Wechselrichter (Symo, Primo, Gen24
 ## Einrichtung
 
 1. Prüfen: Im Browser `http://<IP>/solar_api/v1/GetPowerFlowRealtimeData.fcgi` öffnen – es muss JSON erscheinen.
-   ![Screenshot Schritt 1](../images/adapters/fronius_local-1.png)
+   <!-- Screenshot Schritt 1: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 2. Bei Gen24: *Kommunikation → Solar API* ggf. aktivieren.
-   ![Screenshot Schritt 2](../images/adapters/fronius_local-2.png)
+   <!-- Screenshot Schritt 2: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 3. Im Assistenten nur die IP eintragen.
-   ![Screenshot Schritt 3](../images/adapters/fronius_local-3.png)
+   <!-- Screenshot Schritt 3: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 
 ## Hinweise
 

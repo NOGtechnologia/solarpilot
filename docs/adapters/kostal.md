@@ -5,9 +5,9 @@ Kostal Plenticore plus / PIKO IQ über Modbus TCP mit SunSpec-Profil.
 ## Einrichtung
 
 1. Im Webserver als Installateur: *Einstellungen → Modbus/SunSpec (TCP)* aktivieren.
-   ![Screenshot Schritt 1](../images/adapters/kostal-1.png)
+   <!-- Screenshot Schritt 1: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 2. Port **1502**, Unit-ID **71**.
-   ![Screenshot Schritt 2](../images/adapters/kostal-2.png)
+   <!-- Screenshot Schritt 2: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 
 ## Fehlerbehebung
 

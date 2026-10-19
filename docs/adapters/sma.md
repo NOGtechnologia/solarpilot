@@ -5,13 +5,13 @@ Für SMA Sunny Tripower/Boy und Sunny Island mit aktivierter Modbus-Schnittstell
 ## Einrichtung
 
 1. Im SMA-Webinterface als Installateur anmelden → *Geräteparameter* → *Externe Kommunikation* → *Modbus* → **TCP-Server aktivieren**.
-   ![Screenshot Schritt 1](../images/adapters/sma-1.png)
+   <!-- Screenshot Schritt 1: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 2. Port 502 belassen.
-   ![Screenshot Schritt 2](../images/adapters/sma-2.png)
+   <!-- Screenshot Schritt 2: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 3. Im Assistenten „SMA (Modbus TCP / SunSpec)“ wählen, IP eintragen, Unit-ID **126**.
-   ![Screenshot Schritt 3](../images/adapters/sma-3.png)
+   <!-- Screenshot Schritt 3: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 4. Für den Netzbezug den SMA Energy Meter/Home Manager über einen separaten Zähler (z. B. Shelly) oder die SunSpec-Zählermodelle einbinden.
-   ![Screenshot Schritt 4](../images/adapters/sma-4.png)
+   <!-- Screenshot Schritt 4: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 
 ## Hinweise
 

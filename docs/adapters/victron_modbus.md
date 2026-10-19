@@ -5,9 +5,9 @@ Cerbo GX, Venus GX und andere GX-Geräte. Liest die Systemwerte (PV, Verbrauch, 
 ## Einrichtung
 
 1. Auf dem GX: *Einstellungen → Dienste → Modbus TCP* → **Aktiviert**.
-   ![Screenshot Schritt 1](../images/adapters/victron_modbus-1.png)
+   <!-- Screenshot Schritt 1: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 2. Unit-ID **100** (com.victronenergy.system).
-   ![Screenshot Schritt 2](../images/adapters/victron_modbus-2.png)
+   <!-- Screenshot Schritt 2: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 
 ## Hinweise
 

@@ -5,11 +5,11 @@ Für alles, was Werte per MQTT veröffentlicht: Tasmota-SML-Leseköpfe, evcc, Vi
 ## Einrichtung
 
 1. Broker-Host/Port und ggf. Benutzer/Passwort eintragen.
-   ![Screenshot Schritt 1](../images/adapters/mqtt_generic-1.png)
+   <!-- Screenshot Schritt 1: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 2. Pro Messwert das Topic angeben (z. B. `tele/sml/SENSOR`).
-   ![Screenshot Schritt 2](../images/adapters/mqtt_generic-2.png)
+   <!-- Screenshot Schritt 2: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 3. Bei JSON-Nachrichten den Schlüssel als Pfad angeben, z. B. `SML.Power`.
-   ![Screenshot Schritt 3](../images/adapters/mqtt_generic-3.png)
+   <!-- Screenshot Schritt 3: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 
 ## Hinweise
 

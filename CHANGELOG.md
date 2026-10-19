@@ -24,4 +24,7 @@ Erste öffentliche Version.
 - **Monatsreport** als Seite und PDF
 - **Benachrichtigungen:** ntfy, Telegram, E-Mail · **MQTT** mit Home-Assistant-Auto-Discovery
 - **PWA**, Hell-/Dunkelmodus, Deutsch/Englisch, Login, verschlüsselte Zugangsdaten
+- Durchgehend Phosphor-Icons (Duotone), eigenes App-Icon
+- Dokumentation: Installation, Erste Schritte mit Screenshots, Anleitung pro Hersteller, FAQ,
+  Fehlerbehebung; CLI `python -m app.cli reset-password` für vergessene Passwörter
 - Docker Compose, Multi-Arch-Image (amd64/arm64), CI mit Tests, E2E und gitleaks

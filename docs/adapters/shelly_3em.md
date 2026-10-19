@@ -5,11 +5,11 @@ Dreiphasiger Zähler am Hausanschluss – liefert Netzbezug/Einspeisung. Rolle: 
 ## Einrichtung
 
 1. Shelly ins WLAN bringen und IP fest vergeben.
-   ![Screenshot Schritt 1](../images/adapters/shelly_3em-1.png)
+   <!-- Screenshot Schritt 1: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 2. Im Assistenten zur bestehenden Anlage hinzufügen, Rolle „Netzzähler“.
-   ![Screenshot Schritt 2](../images/adapters/shelly_3em-2.png)
+   <!-- Screenshot Schritt 2: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 3. Generation „auto“ erkennt Gen1 (`/status`) und Gen2+ (`/rpc/EM.GetStatus`).
-   ![Screenshot Schritt 3](../images/adapters/shelly_3em-3.png)
+   <!-- Screenshot Schritt 3: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 
 ## Hinweise
 

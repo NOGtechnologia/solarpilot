@@ -5,9 +5,9 @@ ET/EH/BT/BH/ES/DT-Serien über das lokale UDP-Protokoll (Bibliothek `goodwe`).
 ## Einrichtung
 
 1. Wechselrichter muss per WLAN/LAN im Heimnetz sein (WiFi/LAN-Kit).
-   ![Screenshot Schritt 1](../images/adapters/goodwe_local-1.png)
+   <!-- Screenshot Schritt 1: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 2. Nur die IP eintragen; die Serie wird automatisch erkannt.
-   ![Screenshot Schritt 2](../images/adapters/goodwe_local-2.png)
+   <!-- Screenshot Schritt 2: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 
 ## Hinweise
 

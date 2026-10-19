@@ -29,6 +29,9 @@ frontend/test-results/
 frontend/playwright-report/
 *.tsbuildinfo
 
+# Lokale Claude-Code-Einstellungen
+.claude/
+
 # Editor / OS
 .DS_Store
 Thumbs.db

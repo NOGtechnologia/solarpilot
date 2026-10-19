@@ -5,9 +5,9 @@ Für Hoymiles-/TSUN-Mikrowechselrichter mit OpenDTU (ESP32). Ideal für Balkonkr
 ## Einrichtung
 
 1. OpenDTU im Heimnetz einrichten (https://www.opendtu.solar).
-   ![Screenshot Schritt 1](../images/adapters/opendtu-1.png)
+   <!-- Screenshot Schritt 1: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 2. Im Assistenten die IP der OpenDTU eintragen – Lesen geht ohne Passwort.
-   ![Screenshot Schritt 2](../images/adapters/opendtu-2.png)
+   <!-- Screenshot Schritt 2: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 
 ## Hinweise
 

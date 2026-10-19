@@ -68,6 +68,31 @@ SOLARPILOT_STATIC_DIR=../frontend/out python -m app      # → http://localhost:
 Windows: `scripts/run-local.ps1`. Entwicklung mit Hot-Reload: `make dev`.
 </details>
 
+Raspberry Pi / NAS mit fertigem Image: `docker run -d -p 8080:8000 -v solarpilot-data:/data ghcr.io/solarpilot/solarpilot`
+– Details in der [Installationsanleitung](docs/installation.md).
+
+## Einrichtung in 4 Schritten
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/images/setup/1-standort.png" alt="Schritt 1: Standort auf der Karte"><br><b>1. Standort</b> auf der Karte wählen</td>
+    <td width="50%"><img src="docs/images/setup/2-hersteller.png" alt="Schritt 2: Hersteller"><br><b>2. Hersteller</b> auswählen</td>
+  </tr>
+  <tr>
+    <td><img src="docs/images/setup/3-verbindung-erfolgreich.png" alt="Schritt 3: Verbindung testen"><br><b>3. Verbindung testen</b> – Live-Werte sofort sichtbar</td>
+    <td><img src="docs/images/setup/4-anlage.png" alt="Schritt 4: Modulfelder"><br><b>4. Modulfelder</b> für die Prognose</td>
+  </tr>
+</table>
+
+## Dokumentation
+
+| | |
+| --- | --- |
+| 📦 [Installation](docs/installation.md) | Docker, Raspberry Pi, NAS, Update, Backup, Fernzugriff |
+| 🚀 [Erste Schritte](docs/erste-schritte.md) | Assistent, Tarif, Benachrichtigungen, Home Assistant, Handy-App |
+| 🔌 [Hersteller-Anleitungen](docs/adapters/README.md) | SMA, Fronius, SolarEdge, Huawei, Victron, OpenDTU … |
+| ❓ [FAQ](docs/faq.md) · 🛠️ [Fehlerbehebung](docs/troubleshooting.md) | Häufige Fragen und Probleme |
+
 ## Unterstützte Hersteller
 
 | Hersteller | Adapter | Verbindung | Status |

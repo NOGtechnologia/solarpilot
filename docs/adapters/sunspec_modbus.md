@@ -5,15 +5,15 @@ Liest die SunSpec-Modelle 1 (Gerät), 101–103 (Wechselrichter), 160 (MPPT/Stri
 ## Einrichtung
 
 1. Modbus TCP im Wechselrichter aktivieren (Webinterface oder Installateursmenü).
-   ![Screenshot Schritt 1](../images/adapters/sunspec_modbus-1.png)
+   <!-- Screenshot Schritt 1: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 2. IP-Adresse des Wechselrichters notieren und am Router fest vergeben.
-   ![Screenshot Schritt 2](../images/adapters/sunspec_modbus-2.png)
+   <!-- Screenshot Schritt 2: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 3. Im Assistenten Host, Port (meist 502) und Unit-ID eintragen.
-   ![Screenshot Schritt 3](../images/adapters/sunspec_modbus-3.png)
+   <!-- Screenshot Schritt 3: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 4. „Verbindung testen“ – es werden Leistung, SoC und Zählerwert angezeigt.
-   ![Screenshot Schritt 4](../images/adapters/sunspec_modbus-4.png)
+   <!-- Screenshot Schritt 4: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 5. Falls Einspeisung als Bezug erscheint: „Vorzeichen Netz umkehren“ aktivieren.
-   ![Screenshot Schritt 5](../images/adapters/sunspec_modbus-5.png)
+   <!-- Screenshot Schritt 5: hier eigenes Bild aus docs/images/adapters/ einfügen -->
 
 ## Konfiguration
 
